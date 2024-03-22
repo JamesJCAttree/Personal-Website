@@ -1,0 +1,502 @@
+<!doctype html>
+<html>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, viewport-fit=cover">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+  <title>James Attree</title>
+  <meta name="description" content="Our first page">
+  <meta name="keywords" content="html tutorial template">
+</head>
+
+    <style>
+        html, body {
+            margin: 0;
+            height: 200%;
+            background-color: #520aFF;
+            background-size: auto;
+            /* Increase the background size */
+            scrollbar-width: none;
+            /* Hide the scrollbar in Firefox */
+            -ms-overflow-style: none;
+            /* Hide the scrollbar in IE and Edge */
+            display: flex;
+            flex-direction: column;
+        }
+
+        body::-webkit-scrollbar {
+            width: 0;
+            /* Hide the scrollbar in Chrome, Safari, and Opera */
+        }
+
+        .star {
+            position: absolute;
+            background-color: rgba(255, 255, 186, 0.41);
+            width: 3px;
+            /* Adjust as per your requirements */
+            height: 3px;
+            /* Adjust as per your requirements */
+            border-radius: 50%;
+            z-index: 1;
+            /* Apply the fade animation */
+            animation: fade 2s infinite;
+        }
+
+        .custom-card {
+            background-color: #3e8bff;
+            color: #000;
+        }
+
+        .custom-card .card-header {
+            border-bottom: none;
+            /* Remove default border */
+        }
+
+        .custom-card .card-header.bg-primary {
+            background-color: #ff009d;
+            /* Set top color for primary card */
+        }
+
+        .custom-card .card-header.bg-success {
+            background-color: #c412ca;
+            /* Set top color for success card */
+        }
+
+        .custom-card .card-header.bg-info {
+            background-color: #4217b8;
+            /* Set top color for info card */
+        }
+
+        .bg-custom {
+            background-color: #f959ff; /* Replace with your desired color */
+        }
+
+        .github-icon {
+            width: 32px;
+            height: 32px;
+            fill: #000;
+            transition: fill 0.2s;
+        }
+
+        .github-icon:hover {
+            fill: #0366d6;
+        }
+
+        .content {
+            flex: 1 0 auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #MainBody {
+            flex: 1;
+        }
+
+        #files:hover {
+            opacity: 0.8
+        }
+
+        /* Key Frames */
+
+        /* This is for the stars fade in */
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* This one is for the stars */
+
+        @keyframes fade-in-out {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+
+        /* This one is for the signs */
+        @keyframes pulsate {
+        100% {
+        /* Larger blur radius */
+        text-shadow:
+            0 0 2px #fff,
+            0 0 2px #fff,
+            0 0 2px #fff,
+            0 0 3px rgb(255, 115, 248),
+            0 0 3px rgb(255, 115, 248),
+            0 0 3px rgb(255, 115, 248),
+            0 0 4px rgb(255, 115, 248),
+            0 0 5px rgb(255, 115, 248);
+        }
+        0% {
+        /* Smaller blur radius */
+        text-shadow:
+            0 0 3px #fff,
+            0 0 4px #fff,
+            0 0 4px #fff,
+            0 0 6px rgb(255, 115, 248),
+            0 0 5px rgb(255, 115, 248),
+            0 0 8px rgb(255, 115, 248),
+            0 0 8px rgb(255, 115, 248),
+            0 0 8px rgb(255, 115, 248);
+        }
+    }
+
+    .strokeme {
+        text-shadow: -1px -1px 0 rgba(184, 0, 123, 0.7), 
+             1px -1px 0 rgba(184, 0, 123, 0.7), 
+             -1px 1px 0 rgba(184, 0, 123, 0.7), 
+             1px 1px 0 rgba(184, 0, 123, 0.7);
+    }
+
+    .strokeme2 {
+        text-shadow: -1px -1px 0 rgba(192, 86, 0, 0.8), 
+             1px -1px 0 rgba(192, 86, 0, 0.8), 
+             -1px 1px 0 rgba(192, 86, 0, 0.8), 
+             1px 1px 0 rgba(192, 86, 0, 0.8);
+    }
+
+    </style>
+
+
+    <body>
+        <!-- lofi stuff -->
+        
+        <div id = "NameCardID" style="margin-top: 30px; position: static; display: flex; justify-content: center; align-items: center;">
+            <!--<div class = "NameCard" style="padding: 10px auto 10px 20px;height: 500px; z-index: 10; background-color: rgb(87, 0, 158); width: 400px; max-height: 200px; border: solid 3px rgb(31, 0, 66); width: 40%; margin: 0 auto; display: flex; justify-content: center; align-items: center; border-radius: 20px; overflow: hidden; position: relative;">
+            </div>-->
+            <div class = "NameCard" style="z-index: 10; background-color: rgb(87, 0, 158); max-width: 700px; min-width: 400px; max-height: 200px; min-height: 200px; border: solid 3px rgb(31, 0, 66); width: 40%; margin: 0 auto; display: flex; justify-content: center; align-items: center; border-radius: 20px; overflow: hidden; position: relative;">
+                <!-- Planets -->
+                <div id = "Moons" style = "z-index: 3;">
+                    <div style = "position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <div style="background-color: rgb(83, 0, 78); width: 150px; height: 150px; border-radius: 50%; display: flex; position: absolute; top: -100px; left: -290px; z-index: 10;"></div>
+                        <div style="background-color: rgb(189, 148, 255); width: 50px; height: 50px; border-radius: 50%; display: flex; position: absolute; top: -65px; left: -10px; z-index: 4;"></div>
+                        <div style="background-color: rgb(87, 0, 158); width: 50px; height: 50px; border-radius: 50%; display: flex; position: absolute; top: -70px; left: 5px; z-index: 4;"></div>
+                    </div>
+                </div>
+
+                <!-- Neon sign -->
+                <div id="NeonSign" style="z-index: 3;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                        <div style="border: solid 2px rgb(31, 0, 66); background-color: rgb(180, 0, 168); width: 66px; height: 150px; border-radius: 5px; display: flex; position: absolute; top: -50px; left: 285px; z-index: 10;">
+                            <div style="margin: 0px; border: solid 2px rgb(31, 0, 66); background-color: rgb(121, 0, 113); width: 60px; height: 144px; border-radius: 5px; display: flex; position: absolute; top: 2px; left: 2px; z-index: 10; justify-content: center; align-items: center;">
+                                <h2 style="padding-left: 36px; animation: pulsate 3.5s infinite alternate; text-shadow: -1px 0px #8d0df5; writing-mode: vertical-rl; text-orientation: upright; font-size: 55px; color: #b964ff8a; margin-left: 15px;">寿司</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Name -->
+                <h1 id="name" style="text-align: center; color: rgb(207, 0, 193); font-size: 90px; position: relative; z-index: 15; text-shadow: -3px 0px #8d0df5;">James Attree</h1>
+            </div>
+        </div>
+
+        <!-- Main body -->
+
+        <div id = "MainBody">
+
+            <div class = "strokeme2">
+                <h2 style = "color:rgb(255, 149, 62); font-size: 40px; text-align: center; padding-top: 30px;"> Quantum Computing, Artificial Intelligence, Game Dev</h2>
+                <h2 id = "Slide" style = "color:rgb(255, 149, 62); font-size: 50px; padding: 75px;">Projects</h2>
+            </div class = "strokeme2">
+            
+            
+
+            <div class="container" style="border: 2px solid #000; border-radius: 5px; background: linear-gradient(0deg, #9122ebc0, #f57d0d96); height: auto;">
+                <div class="row">
+
+                        <!-- Start-->
+                        <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                            <a href="https://github.com/JamesJCAttree/MapGeneration">
+                                <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                    <div class="card-header bg-custom text-center" style = "border-radius: 7px 7px 0 0;"><b>Pixel Map Generation</b></div>
+                                    <div class="card-body" style="align-content: center;">
+                                        <div style="text-align: center;">
+                                            <img src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/31dd12bd6caccb1.png" width="100px" height="auto">
+                                            <!-- <h5 class="card-title">Card Title 1</h5> -->
+                                            <p class="card-text"  style = "margin-top: 10px;">Generates a colorful square pixel map</p>
+                                            <p class="card-text" style = "margin-top: 10px;"><b>[GitHub]</b></p>
+                                            <!--<div onclick = "openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Start-->
+                        <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                            <a href="https://github.com/JamesJCAttree/FBRandomQuantumGraph">
+                                <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                    <div class="card-header bg-custom text-center" style = "border-radius: 7px 7px 0 0;"><b>Quantum Graph Generation</b></div>
+                                    <div class="card-body" style="align-content: center;">
+                                        <div style="text-align: center;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/1998/1998708.png" width="100px" height="auto">
+                                            <p class="card-text" style = "margin-top: 10px;">True random graph using quantum computers</p>
+                                            <p class="card-text" style = "margin-top: 10px;"><b>[GitHub]</b></p>
+                                            <!--<div onclick = "openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- End -->
+
+                        <!-- Start-->
+                        <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                            <a href="https://jamesattree.itch.io/oxygen-incoming">
+                              <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                <div class="card-header bg-custom text-center" style="border-radius: 7px 7px 0 0;"><b>Oxygen Incoming</b></div>
+                                <div class="card-body" style="align-content: center;">
+                                  <div style="text-align: center;">
+                                    <img src="https://www.freepnglogos.com/uploads/bubbles-png/bubbles-transparent-png-pictures-icons-and-png-7.gif" width="100px" height="auto">
+                                    <p class="card-text" style="margin-top: 10px;">2D bullet hell survival game</p>
+                                    <p class="card-text" style="margin-top: 10px;"><b>[Itch.io]</b></p>
+                                    <!--<div onclick="openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                  </div>
+                                </div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        <!-- End -->
+                        
+                        <!-- Start-->
+                        <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                            <a href="https://sortingalgorithms.s3.amazonaws.com/Sorting+Algorithm+Visualized/Front_End_Code/HTML/Front_Page.html">
+                            <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                <div class="card-header bg-custom text-center" style="border-radius: 7px 7px 0 0;"><b>Algorithm Visualizer</b></div>
+                                <div class="card-body" style="align-content: center;">
+                                <div style="text-align: center;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/37/37531.png" width="100px" height="auto">
+                                    <p class="card-text" style="margin-top: 10px;">Visual animation of sorting algorithm</p>
+                                    <p class="card-text" style="margin-top: 10px;"><b>[AWS Cloud]</b></p>
+                                    <!--<div onclick="openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        
+                        <!-- End -->
+                        
+                        <!-- Start-->
+                        <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                            <a href="https://github.com/JamesJCAttree/ASL_Project">
+                            <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                <div class="card-header bg-custom text-center" style="border-radius: 7px 7px 0 0;"><b>ASL Translator</b></div>
+                                <div class="card-body" style="align-content: center;">
+                                <div style="text-align: center;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Sign_language_A.svg/800px-Sign_language_A.svg.png" width="100px" height="auto">
+                                    <p class="card-text" style="margin-top: 10px;">Group project to help assist ASL users, managed NLP module</p>
+                                    <p class="card-text" style="margin-top: 10px;"><b>[GitHub]</b></p>
+                                    <!--<div onclick="openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        
+                        <!-- End -->            
+                                                                                        
+                    </div>
+                </div>
+
+                
+            <div class = "strokeme2">
+                <h2 id = "Slide" style = "color:rgb(255, 149, 62); font-size: 50px; padding: 75px;">Certifications</h2>
+            </div class = "strokeme2">
+            
+            
+
+            <div class="container" style="border: 2px solid #000; border-radius: 5px; background: linear-gradient(0deg, #9122ebc0, #f57d0d96); height: auto;">
+                <div class="row">
+
+                        <!-- Start-->
+                        <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                            <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                <div class="card-header bg-custom text-center" style = "border-radius: 7px 7px 0 0;"><b>AWS ML & AI Certification</b></div>
+                                <div class="card-body" style="align-content: center;">
+                                    <div style="text-align: center;">
+                                        <img src="https://static-00.iconduck.com/assets.00/aws-icon-2048x2048-ptyrjxdo.png" width="100px" height="auto">
+                                        <!-- <h5 class="card-title">Card Title 1</h5> -->
+                                        <p class="card-text"  style = "margin-top: 10px;"><b>[WIP]</b></p>
+                                        <!--<div onclick = "openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End -->                                                         
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+
+                <div class = "strokeme2">
+                    <h2 id = "Slide" style = "color:rgb(255, 149, 62); font-size: 50px; padding: 75px;">Work Experience</h2>
+                </div class = "strokeme2">
+
+                <div class="container" style="border: 2px solid #000; border-radius: 5px; background: linear-gradient(0deg, #9122ebc0, #f57d0d96); height: auto;">
+                    <div class="row">
+    
+                            <!-- Start-->
+                            <div class="col-md-3" style="padding-top: 20px; padding-bottom: 20px;">
+                                <div class="card custom-card" style="border: 3px solid black; border-radius: 10px;">
+                                    <div class="card-header bg-custom text-center" style = "border-radius: 7px 7px 0 0;"><b>Hitachi AI Intern</b></div>
+                                    <div class="card-body" style="align-content: center;">
+                                        <div style="text-align: center;">
+                                            <img src="https://cdn.freebiesupply.com/logos/large/2x/hitachi-1-logo-png-transparent.png" width="100px" height="auto">
+                                            <!-- <h5 class="card-title">Card Title 1</h5> -->
+                                            <p class="card-text"  style = "margin-top: 10px;">Explored NLP and AI through development and experimentation</p>
+                                            <p class="card-text" style = "margin-top: 10px;"><b>6/23 → 7/23</b></p>
+                                            <!--<div onclick = "openNewPage(0)" id="files" style="user-select: none; cursor: default; margin: 0 auto; width: 60%; height: 40px; border: #000000 2px solid; display: flex; align-items: center; justify-content: center; border-radius: 5px; background-color: rgb(235, 134, 255);"><h3 style="line-height: 40px;">Files</h3></div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End -->
+                                                          
+                        </div>
+                    </div>
+            </div>
+
+              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            
+
+        </div>
+
+        <!-- Footer -->
+
+        <footerstyle="padding-top: 60px;">
+            <div class = "footer-content" id = "footer" style = "height: 60px; background-color:#5f05a8; display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                <a href = "https://github.com/JamesJCAttree" class="fa fa-github" style="font-size:48px; color:rgb(0, 0, 0);"></a>
+                <a href = "https://www.linkedin.com/in/jamesattree/" class="fa fa-linkedin" style="font-size:48px; color:rgb(255, 255, 255); padding-left: 20px;"></a>
+                <a href = "https://jamesattree.itch.io/" class="fa fa-gamepad" style="font-size:48px; color:rgb(255, 169, 57); padding-left: 20px;"></a>
+                <a href="https://drive.google.com/file/d/1mfDCPA54b66gTWmn2STd1qasKXbM8or_/view?usp=sharing" style="font-size: 24px; color: rgb(0, 0, 0); padding: 5px 10px; border: 2px solid black; border-radius: 20px; margin-left: 20px;"><b>Resume</b></a>
+                
+            </div>
+        </footer>
+
+        <div id = "Mobile" style = "width: 100%;"><!-- This is so that I can avoid the bottom UI --></div>
+
+    </body>
+</html>
+  
+  <script>
+    // Function to open a new page
+    function openNewPage(number) {
+      if (number === 0) {
+        window.open("http://tf2.com");
+      }
+      console.log(number + " Testing");
+    }
+</script>
+
+<script>
+    // Get all elements with class "NameCard"
+    const starContainers = document.getElementsByClassName("NameCard");
+
+    // Function to generate a random number within a given range
+    function getRandomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // Function to create a star element with random offsets
+    function createStar(container) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.background = "rgba(255, 255, 186, " + (Math.random() * (0.5 - 0.1) + 0.2) + ")";
+        
+        const xOffset = getRandomNumber(-10, 10); // Adjust the range as desired
+        const yOffset = getRandomNumber(-10, 10); // Adjust the range as desired
+
+        // Get the container's dimensions
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+
+        // Calculate the maximum left and top positions within the visible area
+        const maxLeft = containerWidth - star.offsetWidth;
+        const maxTop = containerHeight - star.offsetHeight;
+
+        // Set the star's position with random offsets
+        star.style.left = (getRandomNumber(0, maxLeft) + xOffset) + "px";
+        star.style.top = (getRandomNumber(0, maxTop) + yOffset) + "px";
+
+        const delayOffset = getRandomNumber(0, 2); // Random delay offset between 0 and 2 seconds
+        const visibilityDuration = getRandomNumber(1, 4); // Random visibility duration between 1 and 4 seconds
+
+        star.style.opacity = "0"; // Set initial opacity to 0
+
+        // Add a fade-in-out animation
+        star.style.animation = `fade-in-out ${visibilityDuration}s ease-in-out infinite`;
+        star.style.animationDelay = delayOffset + "s";
+
+        container.appendChild(star);
+    }
+
+    // Create stars for each "NameCard" element
+    for (const container of starContainers) {
+        for (let i = 0; i < 100; i++) {
+            createStar(container);
+        }
+    }
+
+
+
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    var mobileDiv = document.getElementById('Mobile');
+
+    var slideDiv = document.getElementById('Slide');
+
+    if (isMobile) {
+        mobileDiv.style.display = 'block';  // Hide the div
+        mobileDiv.style.height = 85;
+        slideDiv.style.paddingLeft = 20;
+        document.getElementById('NameCardID').style.marginTop = '20px';
+    } else {
+        mobileDiv.style.display = 'block'; // Show the div
+    }
+
+    function debounce(func, delay) {
+    let timer;
+    return function() {
+      clearTimeout(timer);
+      timer = setTimeout(func, delay);
+    };
+  }
+
+  // Function to handle scroll events
+  //function handleScroll() {
+    //var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  
+    //console.log('Scroll position:', scrollPosition, 'px', '/', Math.floor((scrollPosition / window.innerHeight) * 106), '%');
+  
+    //let color = (Math.floor((((scrollPosition / window.innerHeight) * 100))) + 10).toString(16);
+    //let color2 = (Math.floor((((scrollPosition / window.innerHeight) * 100))) + 82).toString(16)
+
+    //console.log(`#${color2}${color}FF`);
+  
+    //document.body.style.backgroundColor = `#${color2}${color}FF`;
+  //}
+
+  // Add a debounced event listener to track scroll position
+  //window.addEventListener('scroll', debounce(handleScroll, 1));
+</script>
